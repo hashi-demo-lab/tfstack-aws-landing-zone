@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(terraform stacks:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Read(//Users/simon.lynch/git/tfstack-aws-eks-vso-instana/**)"
     ],
     "deny": [],
     "ask": []
