@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(terraform stacks:*)"
+      "Bash(terraform stacks:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []
