@@ -34,14 +34,16 @@ deployment "vpc-team1-dev" {
     identity_token     = identity_token.aws_team1.jwt
   }
 
-  publish_output "vpc_id" {
-    value = deployment.vpc-team1-dev.vpc_id
-  }
-
-  publish_output "private_subnets" {
-    value = deployment.vpc-team1-dev.private_subnets
-  }
 }
+
+publish_output "vpc_id" {
+    value = deployment.vpc-team1-dev.vpc_id
+}
+
+publish_output "private_subnets" {
+    value = deployment.vpc-team1-dev.private_subnets
+}
+
 
 # deployment "vpc-team2-dev" {
 #   deployment_group = deployment_group.dev_teams_auto
