@@ -14,18 +14,8 @@ locals {
   team2_role_arn = "arn:aws:iam::ACCOUNT_ID:role/hcp-terraform-stacks-team2"
 }
 
-# Deployment group with automatic approval
-orchestrate "auto_approve" "dev_teams" {
-  check {
-    # All deployments must have successful plans
-    condition = context.plan.deployment_group_applyable
-    reason    = "Plan must be successful for all deployments in the group"
-  }
-}
-
-deployment_group "dev_teams_auto" {
-  orchestration "auto_approve" "dev_teams" {}
-}
+# Deployment group for both team deployments
+deployment_group "dev_teams_auto" {}
 
 deployment "vpc-team1-dev" {
   deployment_group = deployment_group.dev_teams_auto
