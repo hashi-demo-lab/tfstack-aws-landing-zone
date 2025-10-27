@@ -561,7 +561,11 @@ Update files to use .tfcomponent.hcl or .tfcomponent.json extensions.
 ### Provider Configuration Errors
 
 **Issue**: Providers defined inside modules
-**Solution**: Move all provider configurations to Stack-level `.tfstack.hcl` files
+**Solution**: Move all provider configurations to Stack-level `.tfcomponent.hcl` files
+
+To update provider lock use
+`terraform stacks providers-lock`
+
 
 ### Circular Dependencies
 
