@@ -15,10 +15,10 @@ locals {
 }
 
 # Deployment group for both team deployments
-deployment_group "dev_teams_auto" {}
+#deployment_group "dev_teams_auto" {}
 
 deployment "vpc-team1-dev" {
-  deployment_group = deployment_group.dev_teams_auto
+  #deployment_group = deployment_group.dev_teams_auto
 
   inputs = {
     aws_region         = "ap-southeast-2"
