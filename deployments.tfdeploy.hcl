@@ -7,13 +7,6 @@ identity_token "aws_team2" {
   audience = ["aws.workload.identity"]
 }
 
-locals {
-  # Update these with your AWS IAM role ARNs for HCP Terraform OIDC authentication
-  # Each team deployment uses its own dedicated role
-  team1_role_arn = "arn:aws:iam::855831148133:role/tfstacks-role"
-  team2_role_arn = "arn:aws:iam::ACCOUNT_ID:role/hcp-terraform-stacks-team2"
-}
-
 # Deployment group for both team deployments
 #deployment_group "dev_teams_auto" {}
 
