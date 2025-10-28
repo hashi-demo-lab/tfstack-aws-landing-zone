@@ -3,8 +3,8 @@ component "vpc" {
   version = "6.5.0"
 
   inputs = {
-    name   = var.vpc_name
-    cidr   = var.vpc_cidr
+    name = var.vpc_name
+    cidr = var.vpc_cidr
 
     azs             = var.azs
     private_subnets = var.private_subnets

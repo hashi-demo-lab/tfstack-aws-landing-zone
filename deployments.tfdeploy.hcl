@@ -34,16 +34,16 @@ deployment "vpc-team1-simon-dev" {
 }
 
 publish_output "vpc_id_team1" {
-    value = deployment.vpc-team1-simon-dev.vpc_id
+  value = deployment.vpc-team1-simon-dev.vpc_id
 }
 
 publish_output "private_subnets_team1" {
-    value = deployment.vpc-team1-simon-dev.private_subnets
+  value = deployment.vpc-team1-simon-dev.private_subnets
 }
 
 
 deployment "vpc-team2-jessica-dev" {
-#   deployment_group = deployment_group.dev_teams_auto
+  #   deployment_group = deployment_group.dev_teams_auto
 
   inputs = {
     aws_region         = "ap-southeast-1"
@@ -70,7 +70,7 @@ publish_output "private_subnets_team2" {
 
 
 deployment "vpc-team3-pranit-dev" {
-#   deployment_group = deployment_group.dev_teams_auto
+  #   deployment_group = deployment_group.dev_teams_auto
 
   inputs = {
     aws_region         = "ap-south-1"
