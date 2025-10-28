@@ -69,29 +69,29 @@ publish_output "private_subnets_team2" {
 }
 
 
-deployment "vpc-team3-pranit-dev" {
-  #   deployment_group = deployment_group.dev_teams_auto
+# deployment "vpc-team3-pranit-dev" {
+#   #   deployment_group = deployment_group.dev_teams_auto
 
-  inputs = {
-    aws_region         = "ap-south-1"
-    vpc_name           = "team3-dev-vpc"
-    vpc_cidr           = "10.1.0.0/16"
-    azs                = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
-    private_subnets    = ["10.1.1.0/24", "10.1.2.0/24", "10.1.3.0/24"]
-    public_subnets     = ["10.1.101.0/24", "10.1.102.0/24", "10.1.103.0/24"]
-    enable_nat_gateway = true
-    enable_vpn_gateway = false
-    environment        = "dev"
-    role_arn           = "arn:aws:iam::124355636080:role/Terraform-service-account-role"
-    identity_token     = identity_token.aws_team3.jwt
-  }
-  destroy = true
-}
+#   inputs = {
+#     aws_region         = "ap-south-1"
+#     vpc_name           = "team3-dev-vpc"
+#     vpc_cidr           = "10.1.0.0/16"
+#     azs                = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
+#     private_subnets    = ["10.1.1.0/24", "10.1.2.0/24", "10.1.3.0/24"]
+#     public_subnets     = ["10.1.101.0/24", "10.1.102.0/24", "10.1.103.0/24"]
+#     enable_nat_gateway = true
+#     enable_vpn_gateway = false
+#     environment        = "dev"
+#     role_arn           = "arn:aws:iam::124355636080:role/Terraform-service-account-role"
+#     identity_token     = identity_token.aws_team3.jwt
+#   }
+#   destroy = true
+# }
 
-publish_output "vpc_id_team3" {
-  value = deployment.vpc-team3-pranit-dev.vpc_id
-}
+# publish_output "vpc_id_team3" {
+#   value = deployment.vpc-team3-pranit-dev.vpc_id
+# }
 
-publish_output "private_subnets_team3" {
-  value = deployment.vpc-team3-pranit-dev.private_subnets
-}
+# publish_output "private_subnets_team3" {
+#   value = deployment.vpc-team3-pranit-dev.private_subnets
+# }
