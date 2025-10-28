@@ -85,6 +85,7 @@ deployment "vpc-team3-pranit-dev" {
     role_arn           = "arn:aws:iam::124355636080:role/Terraform-service-account-role"
     identity_token     = identity_token.aws_team3.jwt
   }
+  destroy = true
 }
 
 publish_output "vpc_id_team3" {
