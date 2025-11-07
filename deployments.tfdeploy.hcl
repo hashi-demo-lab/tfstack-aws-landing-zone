@@ -12,8 +12,8 @@ identity_token "aws_team3" {
 }
 
 # Access the 'stacks-examples' variable set to retrieve role_arn
-store "varset" "stacks_config" {
-  name     = "stacks-examples"
+store "varset" "stacks_role_config" {
+  name     = "tfstacks_vars_role_arn"
   category = "terraform"
 }
 
@@ -33,7 +33,8 @@ deployment "vpc-team1-simon-dev" {
     enable_nat_gateway = true
     enable_vpn_gateway = false
     environment        = "dev"
-    role_arn           = store.varset.stacks_config.role_arn
+    # role_arn           = "arn:aws:iam::855831148133:role/tfstacks-role"
+    role_arn = store.varset.stacks_role_config.stable.vpc-team1-simon-dev_role_arn
     identity_token     = identity_token.aws_team1.jwt
   }
 
@@ -63,7 +64,8 @@ deployment "vpc-team2-jessica-dev" {
     enable_nat_gateway = true
     enable_vpn_gateway = false
     environment        = "dev"
-    role_arn           = store.varset.stacks_config.role_arn
+    # role_arn           = "arn:aws:iam::034362039150:role/stacks-jessicaorg-ahm-hackathon"
+    role_arn = store.varset.stacks_role_config.stable.vpc-team2-jessica-dev_role_arn
     identity_token     = identity_token.aws_team2.jwt
   }
 }
@@ -92,7 +94,8 @@ deployment "vpc-team3-pranit-dev" {
     enable_nat_gateway = true
     enable_vpn_gateway = false
     environment        = "dev"
-    role_arn           = store.varset.stacks_config.role_arn
+    # role_arn           = "arn:aws:iam::124355636080:role/Terraform-service-account-role"
+    role_arn = store.varset.stacks_role_config.stable.vpc-team3-pranit-dev_role_arn
     identity_token     = identity_token.aws_team3.jwt
   }
   # destroy = true

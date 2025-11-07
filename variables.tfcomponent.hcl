@@ -48,9 +48,9 @@ variable "enable_vpn_gateway" {
 
 variable "role_arn" {
   type        = string
-  description = "ARN of the IAM role to assume for AWS operations. Value provided by 'stacks-examples' variable set in HCP Terraform"
-  sensitive   = true
-  ephemeral   = true  # Required 
+  description = "ARN of the IAM role to assume for AWS operations. Value provided by 'tfstacks_vars_role_arn' variable set in hackathon project"
+  # sensitive   = true
+  # ephemeral   = true  # Required 
 }
 
 variable "identity_token" {
