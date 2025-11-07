@@ -11,7 +11,7 @@ identity_token "aws_team3" {
   audience = ["aws.workload.identity"]
 }
 
-# Access the 'stacks-examples' variable set to retrieve role_arn
+# Access the 'tfstacks_vars_role_arn' variable set to retrieve role_arn
 store "varset" "stacks_role_config" {
   name     = "tfstacks_vars_role_arn"
   category = "terraform"
@@ -34,20 +34,20 @@ deployment "vpc-team1-simon-dev" {
     enable_vpn_gateway = false
     environment        = "dev"
     # role_arn           = "arn:aws:iam::855831148133:role/tfstacks-role"
-    role_arn = store.varset.stacks_role_config.stable.vpc-team1-simon-dev_role_arn
-    identity_token     = identity_token.aws_team1.jwt
+    role_arn       = store.varset.stacks_role_config.stable.vpc-team1-simon-dev_role_arn
+    identity_token = identity_token.aws_team1.jwt
   }
 
 }
 
 publish_output "vpc_id_team1" {
   description = "VPC ID for Team 1"
-  value = deployment.vpc-team1-simon-dev.vpc_id
+  value       = deployment.vpc-team1-simon-dev.vpc_id
 }
 
 publish_output "private_subnets_team1" {
   description = "Private Subnets for Team 1"
-  value = deployment.vpc-team1-simon-dev.private_subnets
+  value       = deployment.vpc-team1-simon-dev.private_subnets
 }
 
 
@@ -65,19 +65,19 @@ deployment "vpc-team2-jessica-dev" {
     enable_vpn_gateway = false
     environment        = "dev"
     # role_arn           = "arn:aws:iam::034362039150:role/stacks-jessicaorg-ahm-hackathon"
-    role_arn = store.varset.stacks_role_config.stable.vpc-team2-jessica-dev_role_arn
-    identity_token     = identity_token.aws_team2.jwt
+    role_arn       = store.varset.stacks_role_config.stable.vpc-team2-jessica-dev_role_arn
+    identity_token = identity_token.aws_team2.jwt
   }
 }
 
 publish_output "vpc_id_team2" {
   description = "VPC ID for Team 2"
-  value = deployment.vpc-team2-jessica-dev.vpc_id
+  value       = deployment.vpc-team2-jessica-dev.vpc_id
 }
 
 publish_output "private_subnets_team2" {
   description = "Private Subnets for Team 2"
-  value = deployment.vpc-team2-jessica-dev.private_subnets
+  value       = deployment.vpc-team2-jessica-dev.private_subnets
 }
 
 
@@ -95,18 +95,18 @@ deployment "vpc-team3-pranit-dev" {
     enable_vpn_gateway = false
     environment        = "dev"
     # role_arn           = "arn:aws:iam::124355636080:role/Terraform-service-account-role"
-    role_arn = store.varset.stacks_role_config.stable.vpc-team3-pranit-dev_role_arn
-    identity_token     = identity_token.aws_team3.jwt
+    role_arn       = store.varset.stacks_role_config.stable.vpc-team3-pranit-dev_role_arn
+    identity_token = identity_token.aws_team3.jwt
   }
   # destroy = true
 }
 
 publish_output "vpc_id_team3" {
   description = "VPC ID for Team 3"
-  value = deployment.vpc-team3-pranit-dev.vpc_id
+  value       = deployment.vpc-team3-pranit-dev.vpc_id
 }
 
 publish_output "private_subnets_team3" {
   description = "Private Subnets for Team 3"
-  value = deployment.vpc-team3-pranit-dev.private_subnets
+  value       = deployment.vpc-team3-pranit-dev.private_subnets
 }
