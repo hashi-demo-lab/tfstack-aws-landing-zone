@@ -40,10 +40,12 @@ deployment "vpc-team1-simon-dev" {
 }
 
 publish_output "vpc_id_team1" {
+  description = "VPC ID for Team 1"
   value = deployment.vpc-team1-simon-dev.vpc_id
 }
 
 publish_output "private_subnets_team1" {
+  description = "Private Subnets for Team 1"
   value = deployment.vpc-team1-simon-dev.private_subnets
 }
 
@@ -67,10 +69,12 @@ deployment "vpc-team2-jessica-dev" {
 }
 
 publish_output "vpc_id_team2" {
+  description = "VPC ID for Team 2"
   value = deployment.vpc-team2-jessica-dev.vpc_id
 }
 
 publish_output "private_subnets_team2" {
+  description = "Private Subnets for Team 2"
   value = deployment.vpc-team2-jessica-dev.private_subnets
 }
 
@@ -95,9 +99,11 @@ deployment "vpc-team3-pranit-dev" {
 }
 
 publish_output "vpc_id_team3" {
+  description = "VPC ID for Team 3"
   value = deployment.vpc-team3-pranit-dev.vpc_id
 }
 
 publish_output "private_subnets_team3" {
+  description = "Private Subnets for Team 3"
   value = deployment.vpc-team3-pranit-dev.private_subnets
 }
