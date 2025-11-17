@@ -38,6 +38,8 @@ deployment "vpc-team1-simon-dev" {
     identity_token = identity_token.aws_team1.jwt
   }
 
+destroy = true
+
 }
 
 publish_output "vpc_id_team1" {
